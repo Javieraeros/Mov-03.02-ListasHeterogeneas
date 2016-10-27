@@ -16,6 +16,7 @@ public class MyArrayAdapter extends ArrayAdapter {
         super(context, resource,textViewResourceID, objects);
     }
 
+
     @Override
     public View getView(int position, View convertView,ViewGroup parent){
         View v=convertView;
@@ -37,6 +38,33 @@ public class MyArrayAdapter extends ArrayAdapter {
         holder.getLab().setText(equipo.getName());
         holder.getImg().setImageResource(equipo.getIcon());
         return v;
+    }
+
+    /**
+     * Método que devuelve que tipo de visibilidad va a tener una fila dependiendo
+     * de su posición
+     * @param position
+     * @return
+     */
+    @Override
+    public int getItemViewType(int position) {
+        int resultado;
+        if(position%3==0){
+            resultado=0;
+        }else if(position%3==1){
+            resultado=1;
+        }else{
+            resultado=2;
+        }
+
+        resultado=position%3;
+
+        return resultado;
+    }
+
+    @Override
+    public int getViewTypeCount() {
+        return 3;
     }
 
 }
