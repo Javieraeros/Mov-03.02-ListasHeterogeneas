@@ -1,6 +1,7 @@
 package es.iesnervion.fjruiz.mov_0302_listasheterogeneas;
 
 import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
@@ -26,9 +27,8 @@ public class MyArrayAdapter extends ArrayAdapter {
 
         if(v==null) {
 
-            v=super.getView(position,convertView,parent);
-            TextView txt=(TextView) v.findViewById(R.id.texto);
-            ImageView icon=(ImageView) v.findViewById(R.id.icon);
+            LayoutInflater inflater=LayoutInflater.from(getContext());
+            v=inflater.inflate(R.layout.fila,parent,false);
 
             holder=new ViewHolder(v,R.id.texto,R.id.icon);
             v.setTag(holder);
