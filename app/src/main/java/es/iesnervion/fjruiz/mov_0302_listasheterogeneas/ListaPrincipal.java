@@ -22,7 +22,16 @@ public class ListaPrincipal extends ListActivity {
         LolTeam clg=new LolTeam(4,"Counter Logic Gaming","NPI de que equipo es",R.drawable.clg,23);
 
 
-        LolTeam[] teams={origen,tsm,skt,g2,clg};
+        LolTeam[] teams=new LolTeam[1000];
+        
+        for(int i=0;i<1000;i+=5){
+            teams[i]=origen;
+            teams[i+1]=tsm;
+            teams[i+2]=skt;
+            teams[i+3]=g2;
+            teams[i+4]=clg;
+
+        }
         MyArrayAdapter a=new MyArrayAdapter(this,R.layout.fila,R.id.texto,teams);
         setListAdapter(a);
 

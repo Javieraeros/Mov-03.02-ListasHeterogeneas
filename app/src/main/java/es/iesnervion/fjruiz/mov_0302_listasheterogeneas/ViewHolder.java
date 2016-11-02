@@ -12,7 +12,7 @@ public class ViewHolder {
     TextView lab;
     ImageView img;
 
-    ViewHolder(View row, int labId, int imgId) {
+    public ViewHolder(View row, int labId, int imgId) {
         this.lab = (TextView) row.findViewById(labId);
         this.img = (ImageView) row.findViewById(imgId);
     }
